@@ -1,19 +1,51 @@
+<!DOCTYPE html>
+<html>
 <head>
     <title>Blueprints</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="apimock.js"></script>
-    <script src="app.js"></script>
-    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/apimock.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/api.js"></script>
     <link rel="stylesheet"
-      href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+      href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<style>
+body{
+ background-image:url(/imagenes/wallpaper.jpg);
+   background-repeat:no-repeat;
+   background-size:cover;
+   }
+</style>
 </head>
 <body>
-  <h1>Blueprints</h1>
-  <p>Autor</p>
-  <form action="app.getBlueprintsByAuthor(value)" >
-  <input type="text" name= "value">
-  <input type="submit">
-  </form>
+	 
+	<h1 style="color:black">Blueprints</h1>
+	<input id="blueprint" type="text" size="50">
+	<input type="submit" value="Get BluePrints" onclick="app.getCinemaByName(cinema.value)">
+	<p> 
+	<table style="background-color:black" id="CinemaTable" style="width:100%" border="1">
+	  <tr>
+	    <th style="color:orangered">Blueprints name</th>
+	    <th style="color:orangered">Number of points</th> 
+	    <th style="color:orangered">Open</th>
+
+	  </tr>
+	</table>
+	
+
+<!-- Modal -->
+<div class="modal fade" id="ModalSillas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Total User Points</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
+</html>
