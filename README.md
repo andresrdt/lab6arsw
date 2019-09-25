@@ -15,3 +15,14 @@ in the bottom we show the total points that the author have.
 ![](img/BuildG.PNG)
 
 #
+ ##Front-end
+ 
+ ![](img/front.PNG)
+ 
+ ##Back-end
+ ![](img/back.PNG)
+ 
+ #
+When developing this project, we found some problems, the most important was when the user makes an entry to search, the application does not respond, we discovered that it was because he was not updating the search.
+![](img/updating.PNG)
+ 
