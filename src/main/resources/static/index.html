@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Blueprints</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="apimock.js"></script>
-	<script src="app.js"></script>
-    <link rel="stylesheet"
-      href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-<style>
-body{
- background-image:url(/imagenes/wallpaper.jpg);
-   background-repeat:no-repeat;
-   background-size:cover;
-   }
-</style>
-</head>
-<body>
-	 
-	<h1 style="color:black">Blueprints</h1>
-	<input id="blueprint" type="text" size="50">
-	<input type="submit" value="Get BluePrints" onclick="app.getCinemaByName(cinema.value)">
-	<p> 
-	<table style="background-color:black" id="CinemaTable" style="width:100%" border="1">
-	  <tr>
-	    <th style="color:orangered">Blueprints name</th>
-	    <th style="color:orangered">Number of points</th> 
-	    <th style="color:orangered">Open</th>
-
-	  </tr>
-	</table>
-	
-
-<!-- Modal -->
-<div class="modal fade" id="ModalSillas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Total User Points</h5>
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <h2>  Blueprints</h2>
+    <div class="container">
+      <div style="float: left">
+        <form>
+          <p>
+            Author <input id="author" size="20" type="text" />
+            <button id="authBpButton" type="button" class="btn btn-primary" onclick="BlueprintFunction.buscar(author.value)">
+              Get blueprints
+            </button>
+          </p>
+        </form>
+        <div id="AuthorBlueprint"><h2></h2></div>
+        <table id="blueprintTable" class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Blueprint name</th>
+              <th>Number of points</th>
+              <th>Open</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div id="Sum"><h3></h3></div>
       </div>
-    </div>
-  </div>
-</div>
 
-</body>
+      
+    </div>
+  </body>
+  <script src="apimock.js"></script>
+    <script src="apiclient.js"></script>
+    <script src="app.js"></script>
 </html>
+
