@@ -1,4 +1,4 @@
-# Lab5Arsw
+# Lab6Arsw
 
 # Autores:
 * Andres Rodriguez del toro
