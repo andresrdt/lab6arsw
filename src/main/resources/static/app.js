@@ -19,7 +19,7 @@ var BlueprintFunction = (function() {
                     <td>` + blueprint.name + `</td>
                     <td>` + blueprint.points + `</td>
                     <td>
-                        <button class='btn btn-primary' onClick="App.getBlueprintsByNameAndAuthor('` + blueprint.name + `', '` + blueprint.author + `')">
+                        <button class='btn btn-primary' onClick="apiclient.getBlueprintsByNameAndAuthor('` + blueprint.name + `', '` + blueprint.author + `')">
                             Open
                         </button>
                     </td>
@@ -42,7 +42,7 @@ var BlueprintFunction = (function() {
     var ctx = canvas.getContext("2d");
     ctx.fillStyle = "#FF0000";
     ctx.fillRect(0, 0, 150, 75);
-  }
+  };
   var buscar = function(author) {
     actualizarBusqueda(author);
     $("#AuthorBlueprint > h2").text(author + "'s blueprints: ");
@@ -50,6 +50,6 @@ var BlueprintFunction = (function() {
   };
   return { 
     buscar: buscar,
-
+    dibujar:dibujar,
   };
 })();
