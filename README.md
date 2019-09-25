@@ -15,11 +15,11 @@ in the bottom we show the total points that the author have.
 ![](img/BuildG.PNG)
 
 #
- ##Front-end
+ #Front-end
  
  ![](img/front.PNG)
  
- ##Back-end
+ #Back-end
  ![](img/back.PNG)
  
  #
