@@ -37,6 +37,12 @@ var BlueprintFunction = (function() {
       return { name: blueprint.name, points: blueprint.points.length };
     });
   };
+   var dibujar = function(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, 150, 75);
+  }
   var buscar = function(author) {
     actualizarBusqueda(author);
     $("#AuthorBlueprint > h2").text(author + "'s blueprints: ");
