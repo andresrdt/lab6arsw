@@ -7,7 +7,12 @@ var ApiClient = (function() {
         });
         return callback(null, blueprints);
     }
-
+    var getBlueprintsByNameAndAuthor=function(author,name,callback){
+          var blueprint = $.get("http://localhost:8080/blueprints/" + author+"/"+name, function(data) {
+                return data;
+            }); 
+          return callback(null, blueprint);
+        }
     return {
         getBlueprintsByAuthor: getBlueprintsByAuthor,
     }
