@@ -10,6 +10,8 @@ we make this page in order to respond show the blueprints that one author create
 in the bottom we show the total points that the author have. 
 #
 
+ this is the configuration that we use in the gradle.build
+ 
 ![](img/BuildG.PNG)
 
 #
