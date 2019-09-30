@@ -14,7 +14,7 @@ var ApiClient = (function() {
           return callback(null, blueprint);
         }
     return {
-        getBlueprintsByAuthor: getBlueprintsByAuthor,
+        getBlueprintsByAuthor: getBlueprintsByNameAndAuthor
     }
 
 })();

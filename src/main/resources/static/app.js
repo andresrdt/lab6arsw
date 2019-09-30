@@ -19,9 +19,12 @@ var BlueprintFunction = (function() {
                     <td>` + blueprint.name + `</td>
                     <td>` + blueprint.points + `</td>
                     <td>
-                        <button class='btn btn-primary' onClick="apiclient.getBlueprintsByNameAndAuthor('` + blueprint.name + `', '` + blueprint.author + `')">
-                            Open
-                        </button>
+                        <button class='btn btn-primary' onClick= "BlueprintFunction.dibujar( \"" +
+                        _author +
+                        '" , "' +
+                        blueprint.name +
+                        "\")"
+                        </button> open
                     </td>
                 </tr>
                 `
@@ -37,12 +40,21 @@ var BlueprintFunction = (function() {
       return { name: blueprint.name, points: blueprint.points.length };
     });
   };
-   var dibujar = function(){
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0, 0, 150, 75);
-  };
+   var dibujar = function(author, name){
+     api.getBlueprintsByNameAndAuthor(author,name);
+     var canvas =document.getElementById('Canvas');
+     if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+  
+      ctx.fillRect(25,25,100,100);
+      ctx.clearRect(45,45,60,60);
+      ctx.strokeRect(50,50,50,50);
+    }
+
+
+    
+};
+
   var buscar = function(author) {
     actualizarBusqueda(author);
     $("#AuthorBlueprint > h2").text(author + "'s blueprints: ");
