@@ -11,23 +11,6 @@ var BlueprintFunction = (function () {
       return total + currentValue.points;
     }, 0);
     $("#Sum > h3").text("Total user points: " + sum);
-<<<<<<< HEAD
-    $("#blueprintTable > tbody").empty(); 
-    blueprints.map(function(blueprint) {
-       $("#blueprintTable > tbody").append(
-        "<tr> <td>" +
-          blueprint.name +
-          "</td>" +
-          "<td>" +
-          blueprint.points +
-          "</td>" +
-          "<td><form><button type='button' class='btn btn-primary' onclick='BlueprintFunction.dibujar( \"" +
-          _author +
-          '" , "' +
-          blueprint.name +
-          "\")' >Open</button></form></td>" +
-          "</tr>"
-=======
     $("#blueprintTable > tbody").empty();
     blueprints.map(function (blueprint) {
       $("#blueprintTable > tbody").append(
@@ -45,7 +28,6 @@ var BlueprintFunction = (function () {
                     </td>
                 </tr>
                 `
->>>>>>> 7aee609ebca22fea6189f1eaa627610abc378502
       );
     });
     //api.getBlueprintsByNameAndAuthor(author, name);
