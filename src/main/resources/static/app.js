@@ -13,21 +13,19 @@ var BlueprintFunction = (function() {
     $("#Sum > h3").text("Total user points: " + sum);
     $("#blueprintTable > tbody").empty(); 
     blueprints.map(function(blueprint) {
-      $("#blueprintTable > tbody").append(
-        `
-                <tr>
-                    <td>` + blueprint.name + `</td>
-                    <td>` + blueprint.points + `</td>
-                    <td>
-                        <button class='btn btn-primary' onClick= "BlueprintFunction.dibujar( \"" +
-                        _author +
-                        '" , "' +
-                        blueprint.name +
-                        "\")"
-                        </button> open
-                    </td>
-                </tr>
-                `
+       $("#blueprintTable > tbody").append(
+        "<tr> <td>" +
+          blueprint.name +
+          "</td>" +
+          "<td>" +
+          blueprint.points +
+          "</td>" +
+          "<td><form><button type='button' class='btn btn-primary' onclick='BlueprintFunction.dibujar( \"" +
+          _author +
+          '" , "' +
+          blueprint.name +
+          "\")' >Open</button></form></td>" +
+          "</tr>"
       );
     });
 	//api.getBlueprintsByNameAndAuthor(author, name);
