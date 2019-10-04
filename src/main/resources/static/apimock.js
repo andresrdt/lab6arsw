@@ -54,14 +54,13 @@ apimock = (function() {
   ];
   return {
     getBlueprintsByAuthor: function(name, callback) {
-      callback(mockdata[name]);
+       callback(mockdata[name]);
     },
-    getBlueprintsByNameAndAuthor: function(author, name, callback) {
-      callback(
-        mockdata[author].filter(obj => {
-          return obj.name === name;
-        })[0]
-      );
-    }
+    getBlueprintsByNameAndAuthor: function(name, author, callback) {
+            blueprint = mockdata[author].find(function(blueprint) {
+                return blueprint.name == name
+            });
+            callback(null, blueprint)
+        }
   };
 })();
