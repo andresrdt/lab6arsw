@@ -11,10 +11,9 @@ var BlueprintFunction = (function () {
       return total + currentValue.points;
     }, 0);
     $("#Sum > h3").text("Total user points: " + sum);
-<<<<<<< HEAD
-    $("#blueprintTable > tbody").empty(); 
-    blueprints.map(function(blueprint) {
-       $("#blueprintTable > tbody").append(
+    $("#blueprintTable > tbody").empty();
+    blueprints.map(function (blueprint) {
+     $("#blueprintTable > tbody").append(
         "<tr> <td>" +
           blueprint.name +
           "</td>" +
@@ -27,28 +26,9 @@ var BlueprintFunction = (function () {
           blueprint.name +
           "\")' >Open</button></form></td>" +
           "</tr>"
-=======
-    $("#blueprintTable > tbody").empty();
-    blueprints.map(function (blueprint) {
-      $("#blueprintTable > tbody").append(
-        `
-                <tr>
-                    <td>` + blueprint.name + `</td>
-                    <td>` + blueprint.points + `</td>
-                    <td>
-                        <button class='btn btn-primary' onClick= "BlueprintFunction.dibujar( \"" +
-                        _author +
-                        '" , "' +
-                        blueprint.name +
-                        "\")"
-                        </button> open
-                    </td>
-                </tr>
-                `
->>>>>>> 7aee609ebca22fea6189f1eaa627610abc378502
       );
     });
-    //api.getBlueprintsByNameAndAuthor(author, name);
+    
   };
   var actualizarBusqueda = function (author) {
     _author = author;
@@ -59,28 +39,36 @@ var BlueprintFunction = (function () {
     });
   };
   var dibujar = function (author, name) {
-    api.getBlueprintsByNameAndAuthor(author, name);
-    var canvas = document.getElementById('Canvas');
-    if (canvas.getContext) {
-      var ctx = canvas.getContext('2d');
-
-      ctx.fillRect(25, 25, 100, 100);
-      ctx.clearRect(45, 45, 60, 60);
-      ctx.strokeRect(50, 50, 50, 50);
+    return ApiClient.getBlueprintsByNameAndAuthor(author, name, function(err, blueprint) {
+            if (err) {
+                return new Error('Error getting blueprint by name and author.')
+            }
+      
+            var canvas = $('#Canvas');
+            var context = canvas[0].getContext('2d');
+            context.clearRect(0, 0, canvas[0].width, canvas[0].height);
+            context.beginPath();
+            blueprint.points.forEach(function(point, index) {
+                if (index < blueprint.points.length - 1) {
+                    context.moveTo(point.x, point.y);
+                    context.lineTo(blueprint.points[index + 1].x, blueprint.points[index + 1].y);
+                    context.stroke();
+                }
+            })
+        })
     }
-
-
-
-  };
-
-
+   
   var buscar = function (author) {
     actualizarBusqueda(author);
     $("#AuthorBlueprint > h2").text(author + "'s blueprints: ");
     api.getBlueprintsByAuthor(author, Table);
   };
+  var buscar2 = function (author , name){
+    api.getBlueprintsByNameAndAuthor(author,name);
+  };
   return {
     buscar: buscar,
+    buscar2: buscar2,
     dibujar: dibujar,
   };
 
